@@ -8,12 +8,50 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/bemVindoTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bem vindo!"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="50dp"
+        />
+    <TextView
+        android:id="@+id/pptTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jogo Pedra-Papel-Tesoura"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bemVindoTv"
+        />
+
+    <Button
+        android:id="@+id/vs1botBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Jogar contra 1 bot"
+        android:textSize="30sp"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <Button
+        android:id="@+id/vs2botBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogar contra 2 bots"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vs1botBt"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
