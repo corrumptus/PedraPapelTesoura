@@ -23,6 +23,32 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         return JoKenPoResult.DERROTA
     }
 
+    fun getresult2Bots(playerChoose: JoKenPoPlayType): JoKenPoResult {
+        val playerChooseTheCounterPlayOfTheAllBots = playerChoose == escolhaBot1.counter()
+                && playerChoose == escolhaBot2.counter()
+
+        if (playerChooseTheCounterPlayOfTheAllBots)
+            return JoKenPoResult.VITORIA
+
+        val playerChooseTheSamePlayAsOtherBots = playerChoose == escolhaBot1
+                && playerChoose == escolhaBot2
+
+        val playerChooseTheSamePlayAsOtherBot1AndNotLoseForTheBot2 = playerChoose == escolhaBot1
+                && playerChoose == escolhaBot2.counter()
+
+        val playerChooseTheSamePlayAsOtherBot2AndNotLoseForTheBot1 = playerChoose == escolhaBot2
+                && playerChoose == escolhaBot1.counter()
+
+        if (
+            playerChooseTheSamePlayAsOtherBots ||
+            playerChooseTheSamePlayAsOtherBot1AndNotLoseForTheBot2 ||
+            playerChooseTheSamePlayAsOtherBot2AndNotLoseForTheBot1
+        )
+            return JoKenPoResult.EMPATE
+
+        return JoKenPoResult.DERROTA
+    }
+
     fun getEscolhaBot1(): JoKenPoPlayType {
         return escolhaBot1
     }
