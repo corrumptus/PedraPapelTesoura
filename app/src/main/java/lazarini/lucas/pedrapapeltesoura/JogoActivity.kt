@@ -2,6 +2,8 @@ package lazarini.lucas.pedrapapeltesoura
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import lazarini.lucas.pedrapapeltesoura.databinding.ActivityJogoBinding
@@ -59,5 +61,29 @@ class JogoActivity : AppCompatActivity() {
 
         activityJogoBinding.resultadoTv.text = game.getResult(play).result
         activityJogoBinding.vencedoresTv.text = game.winners()
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean{
+        menuInflater.inflate(R.menu.menu_new_game, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        game.resetGame()
+
+        activityJogoBinding.escolhaBot1.text = ""
+        activityJogoBinding.escolhaBot1.setBackgroundColor(Color.parseColor("#1e3a8a"))
+
+        if (game.version == JoKenPoVersion.VS_2_BOT) {
+            activityJogoBinding.escolhaBot2.text = ""
+            activityJogoBinding.escolhaBot2.setBackgroundColor(Color.parseColor("#1e3a8a"))
+        }
+
+        activityJogoBinding.escolhaPlayer.text = ""
+        activityJogoBinding.escolhaPlayer.setBackgroundColor(Color.parseColor("#1e3a8a"))
+
+        activityJogoBinding.resultadoTv.text = ""
+        activityJogoBinding.vencedoresTv.text = ""
+
+        return true
     }
 }
