@@ -13,7 +13,17 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         return JoKenPoPlayType.entries.toTypedArray().random()
     }
 
-    fun getResult1Bot(playerChoose: JoKenPoPlayType): JoKenPoResult {
+    fun getResult(playerChoose: JoKenPoPlayType): JoKenPoResult {
+        this.playerChoose = playerChoose
+
+        result = if (version == JoKenPoVersion.VS_1_BOT)
+            getResult1Bot(playerChoose)
+        else getResult2Bots(playerChoose)
+
+        return result as JoKenPoResult
+    }
+
+    private fun getResult1Bot(playerChoose: JoKenPoPlayType): JoKenPoResult {
         if (playerChoose == escolhaBot1)
             return JoKenPoResult.EMPATE
 
@@ -23,7 +33,7 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         return JoKenPoResult.DERROTA
     }
 
-    fun getresult2Bots(playerChoose: JoKenPoPlayType): JoKenPoResult {
+    private fun getResult2Bots(playerChoose: JoKenPoPlayType): JoKenPoResult {
         val playerChooseTheCounterPlayOfTheAllBots = playerChoose == escolhaBot1.counter()
                 && playerChoose == escolhaBot2.counter()
 
