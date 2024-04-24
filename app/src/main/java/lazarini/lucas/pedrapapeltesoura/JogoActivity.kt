@@ -1,6 +1,7 @@
 package lazarini.lucas.pedrapapeltesoura
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import lazarini.lucas.pedrapapeltesoura.databinding.ActivityJogoBinding
 import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.QUANTIDADE_BOTS
@@ -23,5 +24,10 @@ class JogoActivity : AppCompatActivity() {
         }
 
         game = JoKenPoGame(intent.getSerializableExtra(QUANTIDADE_BOTS) as JoKenPoVersion)
+
+        if (game.version == JoKenPoVersion.VS_1_BOT) {
+            activityJogoBinding.bot2Tv.visibility = View.GONE
+            activityJogoBinding.escolhaBot2.visibility = View.GONE
+        }
     }
 }
