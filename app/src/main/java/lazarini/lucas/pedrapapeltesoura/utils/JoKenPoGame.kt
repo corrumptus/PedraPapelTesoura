@@ -13,6 +13,16 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         return JoKenPoPlayType.entries.toTypedArray().random()
     }
 
+    fun getResult1Bot(playerChoose: JoKenPoPlayType): JoKenPoResult {
+        if (playerChoose == escolhaBot1)
+            return JoKenPoResult.EMPATE
+
+        if (playerChoose == escolhaBot1.counter())
+            return JoKenPoResult.VITORIA
+
+        return JoKenPoResult.DERROTA
+    }
+
     fun getEscolhaBot1(): JoKenPoPlayType {
         return escolhaBot1
     }
