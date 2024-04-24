@@ -20,4 +20,10 @@ class JoKenPoGame(val version: JoKenPoVersion) {
     fun getEscolhaBot2(): JoKenPoPlayType {
         return escolhaBot2
     }
+
+    fun resetGame() {
+        escolhaBot1 = randomJokenpoPlayType()
+        escolhaBot2 = randomJokenpoPlayType()
+        result = null
+    }
 }
