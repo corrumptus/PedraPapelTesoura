@@ -6,4 +6,11 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/design_default_color_primary"
     app:titleTextColor="@color/design_default_color_on_primary"
-    app:subtitleTextColor="@color/design_default_color_on_primary" />
+    app:subtitleTextColor="@color/design_default_color_on_primary">
+    <ImageButton
+        android:id="@+id/voltarBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_go_back"
+        />
+</androidx.appcompat.widget.Toolbar>
