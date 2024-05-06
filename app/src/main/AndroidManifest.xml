@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PedraPapelTesoura"
         tools:targetApi="31">
         <activity
+            android:name=".GameResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".JogoActivity"
             android:exported="false" />
         <activity
