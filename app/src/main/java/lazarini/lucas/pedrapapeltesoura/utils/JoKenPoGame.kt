@@ -82,8 +82,9 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         return escolhaBot1
     }
 
-    fun getEscolhaBot2(): JoKenPoPlayType {
-        return escolhaBot2
+    fun getEscolhaBot2(): JoKenPoPlayType? {
+        return if (version === JoKenPoVersion.VS_2_BOT) escolhaBot2
+            else null
     }
 
     fun resetGame() {
