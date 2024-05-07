@@ -33,5 +33,7 @@ class GameResultsActivity : AppCompatActivity() {
         activityGameResultBinding.toolbarIn.voltarBt.setOnClickListener {
             finish()
         }
+
+        activityGameResultBinding.resultsLv.adapter = gameResultsAdapter
     }
 }
