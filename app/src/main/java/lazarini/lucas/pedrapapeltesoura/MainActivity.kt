@@ -39,6 +39,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        activityMainBinding.gameResultsBt.setOnClickListener {
+            Intent(this, GameResultsActivity::class.java).apply {
+                putExtra(GAME_RESULTS, gameResults.toTypedArray())
+                startActivity(this)
+            }
+        }
+
         gameActivityResult = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
