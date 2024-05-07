@@ -56,6 +56,7 @@ class JogoActivity : AppCompatActivity() {
             Intent().apply {
                 putExtra(GAME_RESULTS, gameResults.toTypedArray())
                 setResult(RESULT_OK, this)
+                finish()
             }
         }
     }
