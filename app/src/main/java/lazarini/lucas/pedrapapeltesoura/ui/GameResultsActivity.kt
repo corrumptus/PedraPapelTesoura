@@ -1,4 +1,4 @@
-package lazarini.lucas.pedrapapeltesoura
+package lazarini.lucas.pedrapapeltesoura.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

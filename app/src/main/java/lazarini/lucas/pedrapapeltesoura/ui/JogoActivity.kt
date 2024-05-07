@@ -1,4 +1,4 @@
-package lazarini.lucas.pedrapapeltesoura
+package lazarini.lucas.pedrapapeltesoura.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import lazarini.lucas.pedrapapeltesoura.R
 import lazarini.lucas.pedrapapeltesoura.databinding.ActivityJogoBinding
 import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.GAME_RESULTS
 import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.QUANTIDADE_BOTS

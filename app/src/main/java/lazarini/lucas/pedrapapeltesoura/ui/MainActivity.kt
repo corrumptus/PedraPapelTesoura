@@ -1,4 +1,4 @@
-package lazarini.lucas.pedrapapeltesoura
+package lazarini.lucas.pedrapapeltesoura.ui
 
 import android.content.Intent
 import android.os.Build
