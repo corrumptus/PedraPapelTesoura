@@ -38,5 +38,20 @@ class MainActivity : AppCompatActivity() {
                 startActivity(this)
             }
         }
+
+        gameActivityResult = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode != RESULT_OK)
+                return@registerForActivityResult
+
+            (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+                result.data?.getParcelableArrayExtra(GAME_RESULTS, JoKenPoGameResult::class.java)
+            else
+                result.data?.getParcelableArrayExtra(GAME_RESULTS) as Array<JoKenPoGameResult>
+            )?.let {
+                gameResults.addAll(it)
+            }
+        }
     }
 }
