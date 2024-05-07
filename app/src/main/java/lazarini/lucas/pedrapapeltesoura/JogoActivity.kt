@@ -110,4 +110,12 @@ class JogoActivity : AppCompatActivity() {
 
         return true
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Intent().apply {
+            putExtra(GAME_RESULTS, gameResults.toTypedArray())
+            setResult(RESULT_OK, this)
+        }
+    }
 }
