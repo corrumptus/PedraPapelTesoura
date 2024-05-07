@@ -16,5 +16,9 @@ class GameResultsActivity : AppCompatActivity() {
         activityGameResultBinding.toolbarIn.apply {
             setSupportActionBar(toolbar)
         }
+
+        activityGameResultBinding.toolbarIn.voltarBt.setOnClickListener {
+            finish()
+        }
     }
 }
