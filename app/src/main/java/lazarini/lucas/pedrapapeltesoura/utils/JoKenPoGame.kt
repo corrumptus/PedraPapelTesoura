@@ -87,6 +87,10 @@ class JoKenPoGame(val version: JoKenPoVersion) {
             else null
     }
 
+    fun isEnded(): Boolean {
+        return result != null
+    }
+
     fun resetGame() {
         escolhaBot1 = randomJokenpoPlayType()
         escolhaBot2 = randomJokenpoPlayType()
