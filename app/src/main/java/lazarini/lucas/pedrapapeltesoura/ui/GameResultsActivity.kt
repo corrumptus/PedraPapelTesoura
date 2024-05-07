@@ -18,7 +18,9 @@ class GameResultsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(activityGameResultBinding.root)
 
-        val gameResults = intent.getParcelableArrayExtra(GAME_RESULTS) as Array<JoKenPoGameResult>?
+        val gameResults = intent.getParcelableArrayExtra(GAME_RESULTS)
+            ?.map { p -> p as JoKenPoGameResult }
+            ?.toTypedArray()
 
         gameResultsAdapter = GameResultAdapter(
             this,
