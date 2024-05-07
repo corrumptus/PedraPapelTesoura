@@ -61,6 +61,9 @@ class JogoActivity : AppCompatActivity() {
     }
 
     private fun playerPlayHandler(play: JoKenPoPlayType) {
+        if (game.isEnded())
+            return
+
         activityJogoBinding.escolhaBot1.text = game.getEscolhaBot1().play
         activityJogoBinding.escolhaBot1.setBackgroundColor(Color.parseColor("#334155"))
 
