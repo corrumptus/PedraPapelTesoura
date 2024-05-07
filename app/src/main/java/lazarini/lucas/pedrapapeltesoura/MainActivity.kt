@@ -1,9 +1,13 @@
 package lazarini.lucas.pedrapapeltesoura
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import lazarini.lucas.pedrapapeltesoura.databinding.ActivityMainBinding
+import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.GAME_RESULTS
 import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.QUANTIDADE_BOTS
 import lazarini.lucas.pedrapapeltesoura.utils.JoKenPoGameResult
 import lazarini.lucas.pedrapapeltesoura.utils.JoKenPoVersion
@@ -14,6 +18,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val gameResults: MutableList<JoKenPoGameResult> = mutableListOf()
+
+    private lateinit var gameActivityResult: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
