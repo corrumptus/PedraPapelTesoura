@@ -52,7 +52,7 @@ class JogoActivity : AppCompatActivity() {
         activityJogoBinding.escolhaBot1.setBackgroundColor(Color.parseColor("#334155"))
 
         if (game.version == JoKenPoVersion.VS_2_BOT) {
-            activityJogoBinding.escolhaBot2.text = game.getEscolhaBot2().play
+            activityJogoBinding.escolhaBot2.text = game.getEscolhaBot2()?.play
             activityJogoBinding.escolhaBot2.setBackgroundColor(Color.parseColor("#334155"))
         }
 
@@ -62,7 +62,8 @@ class JogoActivity : AppCompatActivity() {
         activityJogoBinding.resultadoTv.text = game.getResult(play).result
         activityJogoBinding.vencedoresTv.text = game.winners()
     }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean{
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_new_game, menu)
         return true
     }
