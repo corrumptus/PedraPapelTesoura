@@ -1,5 +1,6 @@
 package lazarini.lucas.pedrapapeltesoura
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import lazarini.lucas.pedrapapeltesoura.databinding.ActivityJogoBinding
+import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.GAME_RESULTS
 import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.QUANTIDADE_BOTS
 import lazarini.lucas.pedrapapeltesoura.utils.JoKenPoGame
 import lazarini.lucas.pedrapapeltesoura.utils.JoKenPoGameResult
@@ -47,6 +49,13 @@ class JogoActivity : AppCompatActivity() {
 
         activityJogoBinding.tesouraBt.setOnClickListener {
             playerPlayHandler(JoKenPoPlayType.TESOURA)
+        }
+
+        activityJogoBinding.toolbarIn.voltarBt.setOnClickListener {
+            Intent().apply {
+                putExtra(GAME_RESULTS, gameResults.toTypedArray())
+                setResult(RESULT_OK, this)
+            }
         }
     }
 
