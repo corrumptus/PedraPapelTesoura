@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.vs1botBt.setOnClickListener {
             Intent(this, JogoActivity::class.java).apply {
                 putExtra(QUANTIDADE_BOTS, JoKenPoVersion.VS_1_BOT)
-                startActivity(this)
+                gameActivityResult.launch(this)
             }
         }
 
         activityMainBinding.vs2botBt.setOnClickListener {
             Intent(this, JogoActivity::class.java).apply {
                 putExtra(QUANTIDADE_BOTS, JoKenPoVersion.VS_2_BOT)
-                startActivity(this)
+                gameActivityResult.launch(this)
             }
         }
 
