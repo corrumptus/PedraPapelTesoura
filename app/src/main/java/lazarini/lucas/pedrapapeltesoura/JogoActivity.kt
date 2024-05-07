@@ -62,8 +62,19 @@ class JogoActivity : AppCompatActivity() {
         activityJogoBinding.escolhaPlayer.text = play.play
         activityJogoBinding.escolhaPlayer.setBackgroundColor(Color.parseColor("#334155"))
 
-        activityJogoBinding.resultadoTv.text = game.getResult(play).result
+        val result = game.getResult(play)
+
+        activityJogoBinding.resultadoTv.text = result.result
         activityJogoBinding.vencedoresTv.text = game.winners()
+
+        gameResults.add(
+            JoKenPoGameResult(
+                result,
+                play,
+                game.getEscolhaBot1(),
+                game.getEscolhaBot2()
+            )
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
