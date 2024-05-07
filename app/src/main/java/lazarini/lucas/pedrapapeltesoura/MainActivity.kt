@@ -5,12 +5,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import lazarini.lucas.pedrapapeltesoura.databinding.ActivityMainBinding
 import lazarini.lucas.pedrapapeltesoura.utils.IntentMessages.QUANTIDADE_BOTS
+import lazarini.lucas.pedrapapeltesoura.utils.JoKenPoGameResult
 import lazarini.lucas.pedrapapeltesoura.utils.JoKenPoVersion
 
 class MainActivity : AppCompatActivity() {
     private val activityMainBinding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
+
+    private val gameResults: MutableList<JoKenPoGameResult> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
