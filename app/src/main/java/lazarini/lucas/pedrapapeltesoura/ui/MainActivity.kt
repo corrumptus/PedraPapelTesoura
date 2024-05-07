@@ -55,7 +55,9 @@ class MainActivity : AppCompatActivity() {
             (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
                 result.data?.getParcelableArrayExtra(GAME_RESULTS, JoKenPoGameResult::class.java)
             else
-                result.data?.getParcelableArrayExtra(GAME_RESULTS) as Array<JoKenPoGameResult>
+                result.data?.getParcelableArrayExtra(GAME_RESULTS)
+                    ?.map { p -> p as JoKenPoGameResult }
+                    ?.toTypedArray()
             )?.let {
                 gameResults.addAll(it)
             }
