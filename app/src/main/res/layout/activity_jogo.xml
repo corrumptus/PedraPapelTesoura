@@ -20,12 +20,13 @@
         android:id="@+id/resultadoTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="vitória"
         android:textSize="40sp"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbarIn"
-        android:paddingTop="20dp"
+        android:paddingTop="5dp"
         />
     <TextView
         android:id="@+id/tituloVencedoresTv"
@@ -60,7 +61,6 @@
         app:layout_constraintEnd_toStartOf="@id/bot2Tv"
         app:layout_constraintTop_toBottomOf="@id/vencedoresTv"
         app:layout_constraintBottom_toTopOf="@id/escolhaBot1"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         />
     <TextView
@@ -86,7 +86,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vencedoresTv"
         app:layout_constraintBottom_toTopOf="@id/escolhaBot2"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         />
     <TextView
@@ -112,7 +111,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/escolhaBot1"
         app:layout_constraintBottom_toTopOf="@id/escolhaPlayer"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         />
     <TextView
         android:id="@+id/escolhaPlayer"
@@ -122,8 +121,7 @@
         android:textSize="50sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/escolhaBot1"
-        app:layout_constraintBottom_toTopOf="@id/pedraBt"
+        app:layout_constraintTop_toBottomOf="@id/playerTv"
         android:padding="20dp"
         />
 
@@ -137,8 +135,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/papelBt"
         app:layout_constraintTop_toBottomOf="@id/escolhaPlayer"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:padding="20dp"
+        android:layout_marginTop="10dp"
         />
 
     <Button
@@ -151,8 +149,8 @@
         app:layout_constraintStart_toEndOf="@id/pedraBt"
         app:layout_constraintEnd_toStartOf="@id/tesouraBt"
         app:layout_constraintTop_toBottomOf="@id/escolhaPlayer"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:padding="20dp"
+        android:layout_marginTop="10dp"
         />
 
     <Button
@@ -165,6 +163,34 @@
         app:layout_constraintStart_toEndOf="@id/papelBt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/escolhaPlayer"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/lagartoBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#15803d"
+        android:text="🦎"
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/spockBt"
+        app:layout_constraintTop_toBottomOf="@id/pedraBt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="20dp"
+        />
+
+    <Button
+        android:id="@+id/spockBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2563eb"
+        android:text="🖖"
+        android:textSize="50sp"
+        app:layout_constraintStart_toEndOf="@id/lagartoBt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pedraBt"
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="20dp"
         />
