@@ -69,7 +69,10 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         if (result == JoKenPoResult.EMPATE)
             return "Player" +
                 (if (playerChoose == escolhaBot1) ", Bot 1" else "") +
-                (if (playerChoose == escolhaBot2) ", Bot 2" else "")
+                (if (version == JoKenPoVersion.VS_2_BOT && playerChoose == escolhaBot2) ", Bot 2" else "")
+
+        if (version == JoKenPoVersion.VS_1_BOT)
+            return "Bot 1"
 
         if (escolhaBot1 == escolhaBot2)
             return "Bot 1, Bot 2"
