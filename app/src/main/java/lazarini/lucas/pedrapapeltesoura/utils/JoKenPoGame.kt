@@ -27,15 +27,15 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         if (playerChoose == escolhaBot1)
             return JoKenPoResult.EMPATE
 
-        if (playerChoose == escolhaBot1.counter())
+        if (escolhaBot1.counters().contains(playerChoose))
             return JoKenPoResult.VITORIA
 
         return JoKenPoResult.DERROTA
     }
 
     private fun getResult2Bots(playerChoose: JoKenPoPlayType): JoKenPoResult {
-        val playerChooseTheCounterPlayOfTheAllBots = playerChoose == escolhaBot1.counter()
-            && playerChoose == escolhaBot2.counter()
+        val playerChooseTheCounterPlayOfTheAllBots = escolhaBot1.counters().contains(playerChoose)
+            && escolhaBot2.counters().contains(playerChoose)
 
         if (playerChooseTheCounterPlayOfTheAllBots)
             return JoKenPoResult.VITORIA
@@ -44,10 +44,10 @@ class JoKenPoGame(val version: JoKenPoVersion) {
             && playerChoose == escolhaBot2
 
         val playerChooseTheSamePlayAsOtherBot1AndNotLoseForTheBot2 = playerChoose == escolhaBot1
-            && playerChoose == escolhaBot2.counter()
+            && escolhaBot2.counters().contains(playerChoose)
 
         val playerChooseTheSamePlayAsOtherBot2AndNotLoseForTheBot1 = playerChoose == escolhaBot2
-            && playerChoose == escolhaBot1.counter()
+            && escolhaBot1.counters().contains(playerChoose)
 
         if (
             playerChooseTheSamePlayAsOtherBots ||
@@ -74,7 +74,7 @@ class JoKenPoGame(val version: JoKenPoVersion) {
         if (escolhaBot1 == escolhaBot2)
             return "Bot 1, Bot 2"
 
-        return if (escolhaBot1 == escolhaBot2.counter()) "Bot 1"
+        return if (escolhaBot2.counters().contains(escolhaBot1)) "Bot 1"
             else "Bot 2"
     }
 
