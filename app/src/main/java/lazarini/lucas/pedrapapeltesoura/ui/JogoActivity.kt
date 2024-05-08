@@ -52,6 +52,14 @@ class JogoActivity : AppCompatActivity() {
             playerPlayHandler(JoKenPoPlayType.TESOURA)
         }
 
+        activityJogoBinding.lagartoBt.setOnClickListener {
+            playerPlayHandler(JoKenPoPlayType.LAGARTO)
+        }
+
+        activityJogoBinding.spockBt.setOnClickListener {
+            playerPlayHandler(JoKenPoPlayType.SPOCK)
+        }
+
         activityJogoBinding.toolbarIn.voltarBt.setOnClickListener {
             Intent().apply {
                 putExtra(GAME_RESULTS, gameResults.toTypedArray())
